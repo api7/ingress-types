@@ -21,10 +21,10 @@ package v1
 import (
 	time "time"
 
-	configv1 "github.com/gxthrj/apisix-types/pkg/apis/config/v1"
-	versioned "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/gxthrj/apisix-types/pkg/client/informers/externalversions/internalinterfaces"
-	v1 "github.com/gxthrj/apisix-types/pkg/client/listers/config/v1"
+	configv1 "github.com/gxthrj/apisix-ingress-types/pkg/apis/config/v1"
+	versioned "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/gxthrj/apisix-ingress-types/pkg/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/gxthrj/apisix-ingress-types/pkg/client/listers/config/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

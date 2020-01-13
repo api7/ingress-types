@@ -19,8 +19,8 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/gxthrj/apisix-types/pkg/apis/config/v1"
-	"github.com/gxthrj/apisix-types/pkg/client/clientset/versioned/scheme"
+	v1 "github.com/gxthrj/apisix-ingress-types/pkg/apis/config/v1"
+	"github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

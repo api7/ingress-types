@@ -21,7 +21,7 @@ package versioned
 import (
 	"fmt"
 
-	apisixv1 "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned/typed/config/v1"
+	apisixv1 "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned/typed/config/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

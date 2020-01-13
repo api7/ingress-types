@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned"
-	apisixv1 "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned/typed/config/v1"
-	fakeapisixv1 "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned/typed/config/v1/fake"
+	clientset "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned"
+	apisixv1 "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned/typed/config/v1"
+	fakeapisixv1 "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned/typed/config/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

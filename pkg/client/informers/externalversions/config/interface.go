@@ -19,8 +19,8 @@ limitations under the License.
 package config
 
 import (
-	v1 "github.com/gxthrj/apisix-types/pkg/client/informers/externalversions/config/v1"
-	internalinterfaces "github.com/gxthrj/apisix-types/pkg/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/gxthrj/apisix-ingress-types/pkg/client/informers/externalversions/config/v1"
+	internalinterfaces "github.com/gxthrj/apisix-ingress-types/pkg/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

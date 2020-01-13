@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned"
-	config "github.com/gxthrj/apisix-types/pkg/client/informers/externalversions/config"
-	internalinterfaces "github.com/gxthrj/apisix-types/pkg/client/informers/externalversions/internalinterfaces"
+	versioned "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned"
+	config "github.com/gxthrj/apisix-ingress-types/pkg/client/informers/externalversions/config"
+	internalinterfaces "github.com/gxthrj/apisix-ingress-types/pkg/client/informers/externalversions/internalinterfaces"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

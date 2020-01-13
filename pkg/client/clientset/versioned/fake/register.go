@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	apisixv1 "github.com/gxthrj/apisix-types/pkg/apis/config/v1"
+	apisixv1 "github.com/gxthrj/apisix-ingress-types/pkg/apis/config/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

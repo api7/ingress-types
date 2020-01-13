@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/gxthrj/apisix-types/pkg/apis/config/v1"
+	v1 "github.com/gxthrj/apisix-ingress-types/pkg/apis/config/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"

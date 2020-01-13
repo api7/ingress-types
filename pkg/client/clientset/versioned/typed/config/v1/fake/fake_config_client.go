@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	v1 "github.com/gxthrj/apisix-types/pkg/client/clientset/versioned/typed/config/v1"
+	v1 "github.com/gxthrj/apisix-ingress-types/pkg/client/clientset/versioned/typed/config/v1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )
