@@ -52,12 +52,10 @@ type ApisixUpstream struct {
 	Spec              *ApisixUpstreamSpec `json:"spec,omitempty"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type ApisixUpstreamSpec struct {
 	Ports []Port `json:"ports,omitempty"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type Port struct {
 	Port int64 `json:"port,omitempty"`
 	Loadbalancer Loadbalancer `json:"loadbalancer,omitempty"`
