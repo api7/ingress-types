@@ -19,3 +19,5 @@ limitations under the License.
 package v1
 
 type ApisixRouteExpansion interface{}
+
+type ApisixUpstreamExpansion interface{}

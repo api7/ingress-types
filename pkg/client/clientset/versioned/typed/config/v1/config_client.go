@@ -27,6 +27,7 @@ import (
 type ApisixV1Interface interface {
 	RESTClient() rest.Interface
 	ApisixRoutesGetter
+	ApisixUpstreamsGetter
 }
 
 // ApisixV1Client is used to interact with features provided by the apisix.apache.org group.
@@ -36,6 +37,10 @@ type ApisixV1Client struct {
 
 func (c *ApisixV1Client) ApisixRoutes(namespace string) ApisixRouteInterface {
 	return newApisixRoutes(c, namespace)
+}
+
+func (c *ApisixV1Client) ApisixUpstreams(namespace string) ApisixUpstreamInterface {
+	return newApisixUpstreams(c, namespace)
 }
 
 // NewForConfig creates a new ApisixV1Client for the given config.

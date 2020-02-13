@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// ApisixRoutes returns a ApisixRouteInformer.
 	ApisixRoutes() ApisixRouteInformer
+	// ApisixUpstreams returns a ApisixUpstreamInformer.
+	ApisixUpstreams() ApisixUpstreamInformer
 }
 
 type version struct {
@@ -42,4 +44,9 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // ApisixRoutes returns a ApisixRouteInformer.
 func (v *version) ApisixRoutes() ApisixRouteInformer {
 	return &apisixRouteInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApisixUpstreams returns a ApisixUpstreamInformer.
+func (v *version) ApisixUpstreams() ApisixUpstreamInformer {
+	return &apisixUpstreamInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
