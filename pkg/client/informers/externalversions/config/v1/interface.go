@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// ApisixRoutes returns a ApisixRouteInformer.
 	ApisixRoutes() ApisixRouteInformer
+	// ApisixServices returns a ApisixServiceInformer.
+	ApisixServices() ApisixServiceInformer
 	// ApisixUpstreams returns a ApisixUpstreamInformer.
 	ApisixUpstreams() ApisixUpstreamInformer
 }
@@ -44,6 +46,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // ApisixRoutes returns a ApisixRouteInformer.
 func (v *version) ApisixRoutes() ApisixRouteInformer {
 	return &apisixRouteInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApisixServices returns a ApisixServiceInformer.
+func (v *version) ApisixServices() ApisixServiceInformer {
+	return &apisixServiceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // ApisixUpstreams returns a ApisixUpstreamInformer.

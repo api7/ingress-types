@@ -20,4 +20,6 @@ package v1
 
 type ApisixRouteExpansion interface{}
 
+type ApisixServiceExpansion interface{}
+
 type ApisixUpstreamExpansion interface{}

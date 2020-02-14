@@ -1,8 +1,8 @@
 package v1
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"encoding/json"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // +genclient
@@ -60,7 +60,7 @@ type ApisixUpstreamSpec struct {
 }
 
 type Port struct {
-	Port int64 `json:"port,omitempty"`
+	Port         int64        `json:"port,omitempty"`
 	Loadbalancer Loadbalancer `json:"loadbalancer,omitempty"`
 }
 
@@ -85,4 +85,42 @@ type ApisixUpstreamList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata"`
 	Items           []ApisixUpstream `json:"items,omitempty"`
+}
+
+// +genclient
+// +genclient:noStatus
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+type ApisixService struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+	Spec              *ApisixServiceSpec `json:"spec,omitempty"`
+}
+
+type ApisixServiceSpec struct {
+	Upstream string   `json:"upstream,omitempty"`
+	Port     int64    `json:"port,omitempty"`
+	Plugins  []Plugin `json:"plugins,omitempty"`
+}
+
+type Plugin struct {
+	Name   string `json:"name,omitempty"`
+	Enable bool   `json:"enable,omitempty"`
+	Config Config `json:"config,omitempty"`
+}
+
+type Config map[string]interface{}
+
+func (p Config) DeepCopyInto(out *Config) {
+	b, _ := json.Marshal(&p)
+	_ = json.Unmarshal(b, out)
+}
+
+func (p *Config) DeepCopy() *Config {
+	if p == nil {
+		return nil
+	}
+	out := new(Config)
+	p.DeepCopyInto(out)
+	return out
 }
