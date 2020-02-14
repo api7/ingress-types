@@ -97,6 +97,14 @@ type ApisixService struct {
 	Spec              *ApisixServiceSpec `json:"spec,omitempty"`
 }
 
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+type ApisixServiceList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata"`
+	Items           []ApisixService `json:"items,omitempty"`
+}
+
+
 type ApisixServiceSpec struct {
 	Upstream string   `json:"upstream,omitempty"`
 	Port     int64    `json:"port,omitempty"`

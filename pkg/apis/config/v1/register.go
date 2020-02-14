@@ -32,6 +32,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&ApisixRouteList{},
 		&ApisixUpstream{},
 		&ApisixUpstreamList{},
+		&ApisixService{},
+		&ApisixServiceList{},
 	)
 
 	// register the type in the scheme
