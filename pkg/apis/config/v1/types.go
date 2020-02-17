@@ -29,8 +29,9 @@ type Http struct {
 }
 
 type Path struct {
-	Path    string  `json:"path,omitempty"`
-	Backend Backend `json:"backend,omitempty"`
+	Path    string   `json:"path,omitempty"`
+	Backend Backend  `json:"backend,omitempty"`
+	Plugins []Plugin `json:"plugins,omitempty"`
 }
 
 type Backend struct {
@@ -103,7 +104,6 @@ type ApisixServiceList struct {
 	metav1.ListMeta `json:"metadata"`
 	Items           []ApisixService `json:"items,omitempty"`
 }
-
 
 type ApisixServiceSpec struct {
 	Upstream string   `json:"upstream,omitempty"`

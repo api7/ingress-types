@@ -307,7 +307,9 @@ func (in *Http) DeepCopyInto(out *Http) {
 	if in.Paths != nil {
 		in, out := &in.Paths, &out.Paths
 		*out = make([]Path, len(*in))
-		copy(*out, *in)
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 	return
 }
@@ -326,6 +328,13 @@ func (in *Http) DeepCopy() *Http {
 func (in *Path) DeepCopyInto(out *Path) {
 	*out = *in
 	out.Backend = in.Backend
+	if in.Plugins != nil {
+		in, out := &in.Plugins, &out.Plugins
+		*out = make([]Plugin, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
 	return
 }
 
