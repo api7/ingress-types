@@ -10,9 +10,9 @@ import (
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type ApisixRoute struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              *ApisixRouteSpec `json:"spec,omitempty"`
+	metav1.TypeMeta   `json:",inline" yaml:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty" yaml:"metadata,omitempty"`
+	Spec              *ApisixRouteSpec `json:"spec,omitempty" yaml:"spec,omitempty"`
 }
 
 type ApisixRouteSpec struct {
@@ -51,9 +51,9 @@ type ApisixRouteList struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type ApisixUpstream struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              *ApisixUpstreamSpec `json:"spec,omitempty"`
+	metav1.TypeMeta   `json:",inline" yaml:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty" yaml:"metadata,omitempty"`
+	Spec              *ApisixUpstreamSpec `json:"spec,omitempty" yaml:"spec,omitempty"`
 }
 
 type ApisixUpstreamSpec struct {
@@ -93,9 +93,9 @@ type ApisixUpstreamList struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type ApisixService struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              *ApisixServiceSpec `json:"spec,omitempty"`
+	metav1.TypeMeta   `json:",inline" yaml:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty" yaml:"metadata,omitempty"`
+	Spec              *ApisixServiceSpec `json:"spec,omitempty" yaml:"spec,omitempty"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
