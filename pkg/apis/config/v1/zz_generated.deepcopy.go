@@ -352,6 +352,7 @@ func (in *Path) DeepCopy() *Path {
 func (in *Plugin) DeepCopyInto(out *Plugin) {
 	*out = *in
 	in.Config.DeepCopyInto(&out.Config)
+	in.ConfigSet.DeepCopyInto(&out.ConfigSet)
 	return
 }
 

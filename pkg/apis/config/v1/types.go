@@ -112,9 +112,26 @@ type ApisixServiceSpec struct {
 }
 
 type Plugin struct {
-	Name   string `json:"name,omitempty"`
-	Enable bool   `json:"enable,omitempty"`
-	Config Config `json:"config,omitempty"`
+	Name      string    `json:"name,omitempty"`
+	Enable    bool      `json:"enable,omitempty"`
+	Config    Config    `json:"config,omitempty"`
+	ConfigSet ConfigSet `json:"config_set,omitempty"`
+}
+
+type ConfigSet []interface{}
+
+func (p ConfigSet) DeepCopyInto(out *ConfigSet) {
+	b, _ := json.Marshal(&p)
+	_ = json.Unmarshal(b, out)
+}
+
+func (p *ConfigSet) DeepCopy() *ConfigSet {
+	if p == nil {
+		return nil
+	}
+	out := new(ConfigSet)
+	p.DeepCopyInto(out)
+	return out
 }
 
 type Config map[string]interface{}
