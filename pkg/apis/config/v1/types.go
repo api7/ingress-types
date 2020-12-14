@@ -149,3 +149,30 @@ func (p *Config) DeepCopy() *Config {
 	p.DeepCopyInto(out)
 	return out
 }
+
+// +genclient
+// +genclient:noStatus
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+type ApisixTls struct {
+	metav1.TypeMeta   `json:",inline" yaml:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty" yaml:"metadata,omitempty"`
+	Spec              *ApisixTlsSpec `json:"spec,omitempty" yaml:"spec,omitempty"`
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+type ApisixTlsList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata"`
+	Items           []ApisixTls `json:"items,omitempty"`
+}
+
+type ApisixTlsSpec struct {
+	Hosts  []string     `json:"hosts,omitempty"`
+	Secret ApisixSecret `json:"secret,omitempty"`
+}
+
+type ApisixSecret struct {
+	Name      string `json:"name,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
+}

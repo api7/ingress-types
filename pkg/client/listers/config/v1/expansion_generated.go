@@ -34,6 +34,14 @@ type ApisixServiceListerExpansion interface{}
 // ApisixServiceNamespaceLister.
 type ApisixServiceNamespaceListerExpansion interface{}
 
+// ApisixTlsListerExpansion allows custom methods to be added to
+// ApisixTlsLister.
+type ApisixTlsListerExpansion interface{}
+
+// ApisixTlsNamespaceListerExpansion allows custom methods to be added to
+// ApisixTlsNamespaceLister.
+type ApisixTlsNamespaceListerExpansion interface{}
+
 // ApisixUpstreamListerExpansion allows custom methods to be added to
 // ApisixUpstreamLister.
 type ApisixUpstreamListerExpansion interface{}
