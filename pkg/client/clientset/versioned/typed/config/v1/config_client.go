@@ -28,6 +28,7 @@ type ApisixV1Interface interface {
 	RESTClient() rest.Interface
 	ApisixRoutesGetter
 	ApisixServicesGetter
+	ApisixTlsesGetter
 	ApisixUpstreamsGetter
 }
 
@@ -42,6 +43,10 @@ func (c *ApisixV1Client) ApisixRoutes(namespace string) ApisixRouteInterface {
 
 func (c *ApisixV1Client) ApisixServices(namespace string) ApisixServiceInterface {
 	return newApisixServices(c, namespace)
+}
+
+func (c *ApisixV1Client) ApisixTlses(namespace string) ApisixTlsInterface {
+	return newApisixTlses(c, namespace)
 }
 
 func (c *ApisixV1Client) ApisixUpstreams(namespace string) ApisixUpstreamInterface {

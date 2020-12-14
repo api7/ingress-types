@@ -22,4 +22,6 @@ type ApisixRouteExpansion interface{}
 
 type ApisixServiceExpansion interface{}
 
+type ApisixTlsExpansion interface{}
+
 type ApisixUpstreamExpansion interface{}

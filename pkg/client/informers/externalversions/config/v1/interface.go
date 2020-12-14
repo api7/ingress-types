@@ -28,6 +28,8 @@ type Interface interface {
 	ApisixRoutes() ApisixRouteInformer
 	// ApisixServices returns a ApisixServiceInformer.
 	ApisixServices() ApisixServiceInformer
+	// ApisixTlses returns a ApisixTlsInformer.
+	ApisixTlses() ApisixTlsInformer
 	// ApisixUpstreams returns a ApisixUpstreamInformer.
 	ApisixUpstreams() ApisixUpstreamInformer
 }
@@ -51,6 +53,11 @@ func (v *version) ApisixRoutes() ApisixRouteInformer {
 // ApisixServices returns a ApisixServiceInformer.
 func (v *version) ApisixServices() ApisixServiceInformer {
 	return &apisixServiceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApisixTlses returns a ApisixTlsInformer.
+func (v *version) ApisixTlses() ApisixTlsInformer {
+	return &apisixTlsInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // ApisixUpstreams returns a ApisixUpstreamInformer.
